@@ -15,20 +15,18 @@ from random import  choice, randint
 
 #          
                 
-@app.on_message(
-  command(["المبرمج","مبرمج السورس","مبرمج","مطور السورس"])
-)
-async def huhh(client: Client, message: Message):
-    dev_id = 5145609515
-    dev = await client.get_users(dev_id)
-    name = dev.first_name
-    usrnam = dev.username
-    
-    await app.download_media(dev.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
-   
+@app.on_message(command(["المبرمج","مبرمج","مبرمج السورس","مطور السورس"]))
+async def devid(client: Client, message: Message):
+    usr = await client.get_chat(5901732027)
+    name = usr.first_name
+    usrnam = usr.username
+    uid = 5901732027
+    bio = usr.bio
+    await app.download_media(usr.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
+       
     await message.reply_photo(
         photo="downloads/developer.jpg",
-        caption=f"""<b>⌯ 𝙳𝚎𝚟 :</b> <a href='https://t.me/{usrnam}'>{name}</a>\n\n<b>⌯ 𝚄𝚂𝙴𝚁 :</b> @{usrnam}""",
+        caption=f"""<b>• 𝐍𝐚𝐦𝐞 𓏺 {name}\n• 𝐔𝐬𝐞 𓏺 @{usrnam}\n• 𝐈𝐝 𓏺 {uid}\n• 𝐁𝐢𝐨 𓏺 {bio}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -36,7 +34,7 @@ async def huhh(client: Client, message: Message):
                          name, url=f"https://t.me/{usrnam}"), 
                  ],[
                    InlineKeyboardButton(
-                        "•✯ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ✯•", url=f"https://t.me/EF_19"),
+                        "○ 𝐌𝐲 𝐖𝐨𝐫𝐥𝐝 ○", url=f"https://t.me/KHAYAL70"),
                 ],
 
             ]
