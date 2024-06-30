@@ -19,7 +19,7 @@ async def subscription(_, __: Client, message: Message):
 subscribed = filters.create(subscription)
 
 # تعريف دالة لمعالجة الأوامر
-@app.on_message(filters.command(["تشغيل", "بحث", "تخطي", "استئناف", "تقديم", "تحميل", "توقف", "مؤقت", "كمل", "كملي", "لارين بحث", "غنيلي", "شعر", "قران", "اذكار", "ادعيه", "play", "شغلي", "شغل", "vplay", "vتشغيل", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "start", "stats", "الاوامر", "اوامر", "ميوزك", "بنج", "سرعه", "song", "/song", "/start, Nem],"") & ~subscribed)
+@app.on_message(filters.command(["تشغيل", "بحث", "تخطي", "استئناف", "تقديم", "تحميل", "توقف", "مؤقت", "كمل", "كملي", "لارين بحث", "غنيلي", "شعر", "قران", "اذكار", "ادعيه", "play", "شغلي", "شغل", "vplay", "vتشغيل", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "start", "stats", "الاوامر", "اوامر", "ميوزك", "بنج", "سرعه", "song", "/song", "/start", Nem], "") & ~subscribed)
 async def command_handler(_: Client, message: Message):
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
         user_id = message.from_user.id
@@ -31,4 +31,3 @@ async def command_handler(_: Client, message: Message):
             f"◇ عذرًا عزيزي {user} ، عليك الاشتراك في قناة البوت أولاً.",
             reply_markup=markup
         )
-        
