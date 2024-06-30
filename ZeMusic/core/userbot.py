@@ -51,14 +51,14 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("EF_19")
-                await self.one.join_chat("jnssghb")
-                await self.one.join_chat("IC_I6")
+                await self.one.join_chat("K55DD")
+                await self.one.join_chat("eer_5o")
+                await self.one.join_chat("KHAYAL70")
             except:
                 pass
             assistants.append(1)
             try:
-                await self.one.send_message(config.LOGGER_ID, "『 تم تشغيل البوت على سورس الملك 』")
+                await self.one.send_message(config.LOGGER_ID, "♡ تم تشغيل البوت على سورس لارين ♡")
             except:
                 LOGGER(__name__).error(
                     "Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
@@ -68,13 +68,13 @@ class Userbot(Client):
             self.one.name = self.one.me.mention
             self.one.username = self.one.me.username
             assistantids.append(self.one.id)
-            LOGGER(__name__).info(f"تم تشغيل المساعد {self.one.name} على سورس الملك")
+            LOGGER(__name__).info(f"تم تشغيل المساعد {self.one.name} على سورس لاريـن")
 
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("GY_19")
-                await self.two.join_chat("jnssghb")
+                await self.two.join_chat("K55DD")
+                await self.two.join_chat("eer_5o")
             except:
                 pass
             assistants.append(2)
@@ -94,8 +94,8 @@ class Userbot(Client):
         if config.STRING3:
             await self.three.start()
             try:
-                await self.three.join_chat("EF_19")
-                await self.three.join_chat("jnssghb")
+                await self.three.join_chat("K55DD")
+                await self.three.join_chat("eer_5o")
             except:
                 pass
             assistants.append(3)
@@ -115,8 +115,8 @@ class Userbot(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("GY_19")
-                await self.four.join_chat("jnssghb")
+                await self.four.join_chat("K55DD")
+                await self.four.join_chat("eer_5o")
             except:
                 pass
             assistants.append(4)
@@ -136,8 +136,8 @@ class Userbot(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("EF_19")
-                await self.five.join_chat("jnssghb")
+                await self.five.join_chat("K55DD")
+                await self.five.join_chat("eer_5o")
             except:
                 pass
             assistants.append(5)
