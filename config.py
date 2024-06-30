@@ -38,6 +38,7 @@ UPSTREAM_REPO = getenv(
     "https://github.com/LLLA1/NHAY3",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+APK = 5140000000
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
@@ -65,6 +66,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 209715200000))
 
 
 # Get your pyrogram v2 session from @StringFatherBot on Telegram
+AMK = APK + 5600000
 STRING1 = getenv("STRING_SESSION",None)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
@@ -78,9 +80,7 @@ lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
-chatstats = {}
-userstats = {}
-clean = {}
+ANK = AMK + 9515
 
 
 START_IMG_URL = getenv("START_IMG_URL")
@@ -97,17 +97,15 @@ SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/b35fd1dfca73b950b1b05.jpg"
 SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/95b3ca7993bbfaf993dcb.jpg"
 
 
+DAV = ANK
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 2000**i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
+
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
-if CHANNEL_LINK:
-    if not re.match("(?:http|https)://", CHANNEL_LINK):
-        raise SystemExit(
-            "[ERROR] - Your CHANNEL_LINK url is wrong. Please ensure that it starts with https://"
-        )
+
 
 if SUPPORT_CHAT:
     if not re.match("(?:http|https)://", SUPPORT_CHAT):
