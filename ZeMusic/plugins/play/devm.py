@@ -1,35 +1,36 @@
+import asyncio
 import os
-from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+import requests
+import pyrogram
+from pyrogram import Client, filters, emoji
+from strings.filters import command
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from pyrogram.errors import MessageNotModified
 from ZeMusic import app
-from config import OWNER_ID
+from config import OWNER_ID, LOGGER_ID
 import config
+from random import  choice, randint
 
-lnk = "https://t.me/" + config.CHANNEL_LINK
-
-@app.on_message(filters.regex(r"^(المطور|مطور)$"))
+@app.on_message(command(["مطور", "المطور"]))
 async def devid(client: Client, message: Message):
-    try:
-        usr = await client.get_users(OWNER_ID)
-        name = usr.first_name
-        usrnam = usr.username
-        photo_path = os.path.join("downloads", "developer.jpg")
-        await app.download_media(usr.photo.big_file_id, file_name=photo_path)
-        await message.reply_photo(
-            photo=photo_path,
-            caption=f"""<b>⌯ 𝙳𝚎𝚟 :</b> <a href='tg://user?id={OWNER_ID}'>{name}</a>\n\n<b>⌯ 𝚄𝚂𝙴𝚁 :</b> @{usrnam}""",
-            reply_markup=InlineKeyboardMarkup(
+    usr = await client.get_chat(OWNER_ID)
+    name = usr.first_name
+    usrnam = usr.username
+    uid = OWNER_ID
+    bio = usr.bio
+    await app.download_media(usr.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
+       
+    await message.reply_photo(
+        photo="downloads/developer.jpg",
+        caption=f"""<b>• 𝐍𝐚𝐦𝐞 𓏺 {name}\n• 𝐔𝐬𝐞 𓏺 @{usrnam}\n• 𝐈𝐝 𓏺 {uid}\n• 𝐁𝐢𝐨 𓏺 {bio}""",
+        reply_markup=InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(name, url=f"tg://user?id={OWNER_ID}"),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text=config.CHANNEL_NAME, url=lnk),
-                    ],
-                ]
-            ),
-        )
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        
+                    InlineKeyboardButton(name, url=f"tg://user?id={uid}"),
+                ],[
+                    InlineKeyboardButton(
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK),
+                ],
+            ]
+        ),
+    )
