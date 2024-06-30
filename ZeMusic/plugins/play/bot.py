@@ -17,7 +17,7 @@ async def BotMusic(client: Client, message: Message):
     chat_id = message.chat.id
     try:
         member = await client.get_chat_member(chat_id, user_id)
-        if user_id == 5145609515:
+        if user_id == 6811610440:
             rank = f"""مطور السورس {italy}"""
         elif user_id == OWNER_ID:
             rank = f"""مطوري {italy}"""
@@ -26,36 +26,6 @@ async def BotMusic(client: Client, message: Message):
     except Exception as e:
         print(e)
     await message.reply_text(f"<b>⌯ انت </b>{rank}")
-
-        
-
-
-@app.on_message(filters.regex(r"^(ايديي|id)$"))
-async def IdMusic(client: Client, message: Message):
-    await message.reply_text(f"<b>↯ ID : ›</b> <code>{message.from_user.id}</code>")
-
-
-
-
-@app.on_message(filters.regex(r"^(اسمي)$"))
-async def NameMusic(client: Client, message: Message):
-    await message.reply_text(f"<b>↯ اسمك : ›</b> {message.from_user.mention}")
-
-
-
-@app.on_message(filters.regex(r"^(يوزري)$"))
-async def UserMusic(client: Client, message: Message):
-    await message.reply_text(f"<b>↯ يوزرك : ›</b> @{message.from_user.username}")
-
-
-
-@app.on_message(filters.regex(r"^(البايو)$"))
-async def BioMusic(client: Client, message: Message):
-    usr = await client.get_chat(message.from_user.id)
-    bio = usr.bio
-    await message.reply_text(f"""<b>↯ البايو : ›</b> {bio}""")
-    
-
 
 
 @app.on_message(filters.regex(r"^(بوت الحذف|رابط الحذف)$"))
