@@ -6,7 +6,7 @@ from pyrogram.errors import UserNotParticipant
 from ZeMusic import app
 import config
 
-channel = "eo_u7"
+channel = "YMMYC"
 Nem = config.BOT_NAME + " شغل"
 async def subscription(_, __: Client, message: Message):
     user_id = message.from_user.id
@@ -28,6 +28,6 @@ async def command_handler(_: Client, message: Message):
             [Button(text="اضغط للإشتراك", url=f"https://t.me/{channel}")]
         ])
         await message.reply(
-            f"◇ عذرًا عزيزي {user} ، عليك الاشتراك في قناة البوت أولاً.",
+            f"<b>↤عذراً عزيزي {user}\n↤عليك الإشتراك في قناة البوت اولاً",
             reply_markup=markup
         )
