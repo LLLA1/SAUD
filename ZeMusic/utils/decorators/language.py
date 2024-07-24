@@ -2,6 +2,7 @@ from strings import get_string
 
 from ZeMusic import app
 from ZeMusic.misc import SUDOERS
+from config import SUPPORT_CHAT
 from ZeMusic.utils.database import get_lang, is_maintenance
 
 
