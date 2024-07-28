@@ -14,7 +14,7 @@ async def huhh(client: Client, message: Message):
     usrnam = usr.username
 
     await message.reply(
-        text=f"""<b><a href="https://t.me/{usrnam}">• Dev ↦ {name}</a></b>""",
+        text=f"""<b>  <b>\n<a href="https://t.me/{usrnam}">• Dev ↦ {name}</a></b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
