@@ -9,8 +9,9 @@ from ZeMusic import app
 
 @app.on_message(filters.text & filters.regex(r"^\.$"))
 async def huhh(client: Client, message: Message):
-    dev = await client.get_users(OWNER_ID)
-    name = dev.first_name
+    usr = await client.get_chat(OWNER_ID)
+    name = usr.first_name
+    usrnam = usr.username
 
     await message.reply(
         text=f"""<b><a href="https://t.me/{usrnam}">• Dev ↦ {name}</a></b>""",
