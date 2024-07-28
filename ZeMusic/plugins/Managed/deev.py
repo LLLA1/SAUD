@@ -13,12 +13,12 @@ async def huhh(client: Client, message: Message):
     name = dev.first_name
 
     await message.reply(
-        text=f"""<b>Dev ↠ {name}</b>""",
+        text=f"""<b>• Dev ↦  <a href="https://t.me/{usrnam}"> {name}</a></b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                    InlineKeyboardButton(
-                        "دار القصيـد", url="https://t.me/eer_5o"),
+                        "♪ 𝒔𝒂𝒖𝒅 ♪", url="https://t.me/YMMYC"),
                 ],
             ]
         ),
